@@ -1,0 +1,945 @@
+/*variables*/
+/*Mixins*/
+/*style files*/
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+a,
+li,
+button,
+label,
+input,
+p {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 4rem;
+}
+
+h3 {
+  font-size: 2.5rem;
+}
+
+h4,
+h5 {
+  font-size: 2rem;
+}
+
+a {
+  text-decoration: none;
+  color: #2c2c2c;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Montserrat", sans-serif;
+}
+
+#logo {
+  width: 8rem;
+  height: 8rem;
+}
+
+/*This is the styling for the landing page of my website*/
+/*Intro refers to fact that the content of this page is an introduction to my website and I*/
+.intro {
+  min-height: 85vh;
+  width: 90%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.intro h2 {
+  font-size: 8rem;
+  padding-top: 2rem;
+  color: #d338a8;
+  display: inline-block;
+}
+
+.intro h3 {
+  color: #2c2c2c;
+  font-size: 6rem;
+  padding: 2rem 0rem;
+}
+
+.intro p {
+  padding-top: 2rem;
+  color: #2c2c2c;
+}
+
+.splash {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  height: 100%;
+  z-index: -1;
+}
+
+.intro-text,
+.intro-images {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 40rem;
+          flex: 1 1 40rem;
+}
+
+/*Gradient fill is only supported on some browsers so I had to add @supports */
+@supports (background-clip: text) {
+  .intro h2 {
+    background: -webkit-gradient(linear, left top, right top, from(#d338a8), to(#f66537));
+    background: linear-gradient(left, #d338a8, #f66537);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+/*These are animations for the svg on the landing page, this was mt first time using an svg and it was perfect for this application*/
+#plant-left {
+  -webkit-animation: plant 1.25s ease-in-out infinite alternate;
+          animation: plant 1.25s ease-in-out infinite alternate;
+}
+
+#plant-right {
+  -webkit-animation: plant 1.25s ease-in-out infinite alternate 0.625s;
+          animation: plant 1.25s ease-in-out infinite alternate 0.625s;
+}
+
+@supports ((-webkit-transform-origin: bottom) or (transform-origin: bottom)) {
+  #clock-arrow {
+    -webkit-animation: clock 2s linear infinite;
+            animation: clock 2s linear infinite;
+    transform-box: fill-box;
+    -webkit-transform-origin: bottom;
+            transform-origin: bottom;
+  }
+}
+
+@-webkit-keyframes plant {
+  from {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+  to {
+    -webkit-transform: translateY(-20%);
+            transform: translateY(-20%);
+  }
+}
+
+@keyframes plant {
+  from {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+  to {
+    -webkit-transform: translateY(-20%);
+            transform: translateY(-20%);
+  }
+}
+
+@-webkit-keyframes clock {
+  from {
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+  to {
+    -webkit-transform: rotateZ(360deg);
+            transform: rotateZ(360deg);
+  }
+}
+
+@keyframes clock {
+  from {
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+  to {
+    -webkit-transform: rotateZ(360deg);
+            transform: rotateZ(360deg);
+  }
+}
+
+/*Intro social is links to social media and the contact page*/
+.intro-social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 4rem;
+}
+
+.intro-social a {
+  margin-left: 4rem;
+}
+
+.intro-social .link {
+  color: #2c2c2c;
+  padding: 1rem 3rem;
+  background: white;
+  border: 3px solid #2c2c2c;
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.intro-social .git-hub {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.intro-social .link:hover {
+  background: #2c2c2c;
+  color: white;
+}
+
+/*This file contains most of the styling for the projects page, it does not contain the rotating project gallery however because that has its own file*/
+.projects-intro {
+  min-height: 10vh;
+  width: 90%;
+  margin: auto;
+}
+
+.projects-intro h1 {
+  font-size: 4rem;
+  margin-top: 5rem;
+  color: #d338a8;
+}
+
+.projects-intro p {
+  font-size: 2.5rem;
+  margin: 2rem 0rem;
+}
+
+/*projects-splash is a large rotating image behind the image which I added to give the page some colour*/
+.projects-splash {
+  width: 200%;
+  height: 300%;
+  z-index: -3;
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  -webkit-animation: splash 15s linear infinite;
+          animation: splash 15s linear infinite;
+}
+
+@-webkit-keyframes splash {
+  from {
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+  to {
+    -webkit-transform: rotateZ(360deg);
+            transform: rotateZ(360deg);
+  }
+}
+
+@keyframes splash {
+  from {
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+  to {
+    -webkit-transform: rotateZ(360deg);
+            transform: rotateZ(360deg);
+  }
+}
+
+/*The body cant have overflow or else the large rotating splash image would mess with the page, users would be able to scroll outside of the pages boundaries*/
+body {
+  overflow: hidden;
+}
+
+/*This is the styling for the contact page, it consists of just a form for users to give submissions to me*/
+.form-section {
+  min-height: 82vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-top: 3rem;
+}
+
+.form-section form {
+  padding: 3rem 10rem;
+  -webkit-box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2), 0px 20px 40px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2), 0px 20px 40px rgba(0, 0, 0, 0.2);
+  border-radius: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.form-section label {
+  margin-top: 3rem;
+}
+
+.form-section input,
+.form-section textarea {
+  width: 70%;
+  margin-top: 1rem;
+}
+
+.form-section input:focus,
+.form-section textarea:focus {
+  outline: 2px solid black;
+}
+
+.form-section textarea {
+  font-family: "monsterrat", sans-serif;
+  font-size: 2rem;
+}
+
+.form-section button {
+  margin-top: 2rem;
+  width: 70%;
+  padding: 1rem 3rem;
+  background-color: white;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  border: solid 0.1rem #2c2c2c;
+  font-size: 2.5rem;
+}
+
+.form-section button:hover {
+  background-color: #2c2c2c;
+  color: white;
+  cursor: pointer;
+}
+
+/*This file contains the styling for the footer of the page, this is shared over all of the on the website*/
+footer {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  position: -webkit-sticky;
+  position: sticky;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  color: #2c2c2c;
+  min-height: 5vh;
+  padding: 0% 5%;
+  background: -webkit-gradient(linear, left top, right top, from(#d338a8), to(#f66537));
+  background: linear-gradient(left, #d338a8, #f66537);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+/*content-container is located here because the purpose of this div is to keep the footer stuck at the bottom of the page*/
+.content-container {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+}
+
+/*This file contains the styling for the header of the page, this is shared over all of the on the website*/
+.main-head {
+  width: 95%;
+  margin: 0 0 0 auto;
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  min-height: 10vh;
+  width: 60%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  /*The active and not-active classes refer to the page a user is currently viewing, 
+  For example if you are on the projects page, the projects button in the nav par will have a solid black oval around it*/
+}
+
+nav .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 10rem;
+          flex: 1 1 10rem;
+}
+
+nav .logo h1 {
+  margin: 2rem;
+}
+
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 40rem;
+          flex: 1 1 40rem;
+}
+
+nav .not-active {
+  padding: 0.6rem 2rem;
+  border-radius: 2rem;
+  border: solid 0.3rem transparent;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+nav .not-active:hover {
+  border: solid 0.3rem #2c2c2c;
+}
+
+nav .active {
+  border: solid 0.3rem #2c2c2c;
+  background: #2c2c2c;
+  color: white;
+  padding: 0.6rem 2rem;
+  border-radius: 2rem;
+}
+
+/*This file is the styling for my project gallery on the projcet page*/
+/*Each picture and explaination are given position absolute and placed on top of each other, however only one pair is visible at once*/
+.projects-container {
+  width: 90%;
+  margin: auto;
+  margin-top: 0rem;
+  min-height: 50vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  /*The buttons are at the bottom of the page and allow users to switch between projects*/
+}
+
+.projects-container .picture-explaination-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.projects-container .picture-explaination-container .project-box {
+  border: solid 0.2rem #2c2c2c;
+  background-color: rgba(255, 255, 255, 0.4);
+  height: 40vh;
+  margin: 5rem;
+  -webkit-box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2), 0px 20px 40px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2), 0px 20px 40px rgba(0, 0, 0, 0.2);
+  border-radius: 2rem;
+}
+
+.projects-container .picture-explaination-container .project-box .project-content {
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.projects-container .picture-explaination-container .project-box .active-project-content {
+  visibility: visible;
+  opacity: 1;
+}
+
+.projects-container .picture-explaination-container .picture-box {
+  padding: 2rem;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.projects-container .picture-explaination-container .picture-box .project-A {
+  width: 50rem;
+}
+
+.projects-container .picture-explaination-container .picture-box .project-B {
+  width: 36em;
+}
+
+.projects-container .picture-explaination-container .picture-box .project-C {
+  width: 50rem;
+}
+
+.projects-container .picture-explaination-container .explaination-box {
+  padding: 2rem;
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.projects-container .picture-explaination-container .explaination-box .project-explaination {
+  height: 35rem;
+  width: 95rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.projects-container .picture-explaination-container .explaination-box .project-explaination .title {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  font-size: 3.5rem;
+  text-decoration: underline;
+}
+
+.projects-container .picture-explaination-container .explaination-box .project-explaination .paragraph {
+  text-align: justify;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  margin-top: 2rem;
+  font-size: 2.5rem;
+}
+
+.projects-container .picture-explaination-container .explaination-box .project-explaination .link-button {
+  margin-top: 2rem;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.projects-container .picture-explaination-container .explaination-box .project-explaination .link-button a {
+  color: black;
+  text-align: center;
+  padding: 1rem 3rem;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  border: solid 0.2rem #2c2c2c;
+  font-size: 2.5rem;
+}
+
+.projects-container .picture-explaination-container .explaination-box .project-explaination .link-button a:hover {
+  background-color: #2c2c2c;
+  color: white;
+  cursor: pointer;
+}
+
+.projects-container .project-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.projects-container .project-buttons .button {
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  border: solid 0.2rem #2c2c2c;
+  color: #2c2c2c;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 10rem;
+  height: 10rem;
+}
+
+.projects-container .project-buttons .button:hover {
+  background-color: #2c2c2c;
+  color: white;
+  cursor: pointer;
+}
+
+.projects-container .project-buttons .button p {
+  -webkit-transform: translateY(-8%);
+          transform: translateY(-8%);
+  font-size: 6rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+/*
+Due to the fact that the pictures and explainations are positioned absolute they don't scale naturally within their flex-boxes:
+and so every few hundred pixels I had to change the size of the explaination box and the picture so that users would have a good experience no matter what screen size their device had.
+*/
+@media screen and (max-width: 1872px) {
+  .projects-container .picture-explaination-container .picture-box .project-A {
+    width: 46rem;
+  }
+  .projects-container .picture-explaination-container .picture-box .project-B {
+    width: 36em;
+  }
+  .projects-container .picture-explaination-container .picture-box .project-C {
+    width: 46rem;
+  }
+  .projects-container .picture-explaination-container .explaination-box .project-explaination {
+    width: 90rem;
+  }
+}
+
+@media screen and (max-width: 1760px) {
+  .projects-container .picture-explaination-container .picture-box .project-A {
+    width: 44rem;
+  }
+  .projects-container .picture-explaination-container .picture-box .project-B {
+    width: 36em;
+  }
+  .projects-container .picture-explaination-container .picture-box .project-C {
+    width: 44rem;
+  }
+  .projects-container .picture-explaination-container .explaination-box .project-explaination {
+    width: 85rem;
+  }
+}
+
+@media screen and (max-width: 1672px) {
+  .projects-container .picture-explaination-container .picture-box .project-A {
+    width: 42rem;
+  }
+  .projects-container .picture-explaination-container .picture-box .project-B {
+    width: 36em;
+  }
+  .projects-container .picture-explaination-container .picture-box .project-C {
+    width: 42rem;
+  }
+  .projects-container .picture-explaination-container .explaination-box .project-explaination {
+    width: 80rem;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .projects-container .picture-explaination-container .picture-box {
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    display: none;
+  }
+  .projects-container .picture-explaination-container .explaination-box .project-explaination {
+    width: 120rem;
+  }
+}
+
+@media screen and (max-width: 1173px) {
+  .projects-container .picture-explaination-container .explaination-box .project-explaination {
+    width: 100rem;
+  }
+}
+
+@media screen and (max-width: 1022px) {
+  .projects-container .picture-explaination-container .explaination-box .project-explaination {
+    width: 90rem;
+  }
+}
+
+@media screen and (max-width: 914px) {
+  .projects-container .picture-explaination-container .explaination-box .project-explaination {
+    width: 70rem;
+  }
+}
+
+@media screen and (max-width: 444px) {
+  .projects-container {
+    width: 100%;
+  }
+  .projects-container .picture-explaination-container .explaination-box .project-explaination {
+    width: 80%;
+  }
+}
+
+/*
+These are for comaptability between screen sizes: 
+The '@media screen and (max-width: )' functions allow me to adjust the sizing of objects on the screen and their properties to make the website responisive
+The functions here affect objects across the whole website, functions that affect individual pages or objects are on their own scss files
+*/
+@media screen and (max-width: 1596px) {
+  html {
+    font-size: 50%;
+  }
+  svg {
+    width: 80%;
+  }
+  nav {
+    width: 100%;
+  }
+}
+
+/*This function disables the splash on the landing page and projects page at 1120px*/
+@media screen and (max-width: 1120px) {
+  .splash {
+    display: none;
+  }
+  .projects-splash {
+    display: none;
+  }
+  body {
+    overflow-y: scroll;
+  }
+}
+
+/*Since 768px was a common break point for the pages I included the adjustments in this main styles file*/
+@media screen and (max-width: 768px) {
+  form {
+    height: 130rem;
+    padding: 0;
+    width: 100%;
+  }
+  html {
+    font-size: 40%;
+  }
+  svg {
+    height: 60%;
+  }
+  .main-head {
+    width: 100%;
+  }
+  nav .logo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 30rem;
+            flex: 1 1 30rem;
+    margin-top: 2rem;
+  }
+  nav ul {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 60rem;
+            flex: 1 1 60rem;
+    margin: 2rem 0rem;
+  }
+  .intro-text {
+    margin-top: 5rem;
+    text-align: center;
+  }
+  .intro-images {
+    text-align: center;
+  }
+  .intro-social {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .intro-social a {
+    margin: 2rem;
+  }
+}
+
+/*As it affects the whole site the function is here in the main styles file*/
+@media screen and (max-width: 581px) {
+  html {
+    font-size: 30%;
+  }
+}
+/*# sourceMappingURL=style.css.map */

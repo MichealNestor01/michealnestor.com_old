@@ -1,0 +1,81 @@
+<!-- This is a page for allowing users to contact me-->
+<!DOCTYPE html>
+<html lang="en">
+  <!-- This is the header for the website and is identical for all other pages -->
+  <head>
+    <title>Micheal Nestor | software Developer</title>
+    <meta
+      name="description"
+      content="Micheal is the software developer you need on your webdesign journey"
+    />
+    <meta charset="UFT-8" />
+    <meta name="robots" content="index,follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" href="../img/mnLogo.png" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <section class="content-container">
+      <!-- The header class is also identical for each page apart from which link has the 'active' class -->
+      <header class="main-head">
+        <nav>
+          <!-- The image and title 'Micheal Nestor' are treated as a single logo -->
+          <div class="logo">
+            <img src="../img/logo2.png" alt="logo" id="logo" />
+            <h1>Micheal Nestor</h1>
+          </div>
+          <!-- I set out the links as an ul because I find it the easiest to format in css -->
+          <ul>
+            <li><a href="../" class="not-active">Home</a></li>
+            <li><a href="../projects/" class="not-active">Projects</a></li>
+            <li><a href="/" class="active">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+      <!-- This form section uses a template from page clip which is the service I am using to manage submissions-->
+      <section class="form-section">
+        <!-- A user can enter their name, email adress, and send me a message-->
+        <form name="contact" method="POST" data-netlify="true">
+          <label for="name">Name: </label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            required
+            placeholder="John Smith"
+          />
+          <label for="email">Email: </label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            required
+            placeholder="JohnSmith@email.com"
+          />
+          <label for="message">What would you like:</label>
+          <textarea
+            name="message"
+            id="message"
+            cols="30"
+            rows="10"
+            required
+            placeholder="Tell me about who you are and how I can help you!&#10;For example what kind of website you want."
+          ></textarea>
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+    </section>
+    <!-- The same simple footer is used for all of the pages -->
+    <footer>
+      <h4>Micheal Nestor &copy; 2019</h4>
+    </footer>
+  </body>
+  <!-- I used page clip to manage form submissions and this is the script to make it work-->
+  <script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script>
+</html>

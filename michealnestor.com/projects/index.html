@@ -1,0 +1,126 @@
+<!-- This page displays a gallery of my coding projects --> 
+<!DOCTYPE html>
+<html lang="en">
+  <!-- This is the header for the website and is identical for all other pages -->
+  <head>
+    <title>Micheal Nestor | software Developer</title>
+    <meta name="description"
+      content="Micheal is the software developer you need on your webdesign journey"/>
+    <meta charset="UFT-8" />
+    <meta name="robots" content="index,follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="icon" href="../img/mnLogo.png" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500&display=swap" rel="stylesheet"/>
+  </head>
+  <body>
+    <!-- the content container exists to make sure that the footer sticks to the bottom of the page but it is only used in the contact and project pages -->
+    <section class="content-container">
+      <header class="main-head">
+        <!-- The header class is also identical for each page apart from which link has the 'active' class -->
+        <nav>
+          <!-- The image and title 'Micheal Nestor' are treated as a single logo -->
+          <div class="logo">
+            <img src="../img/logo2.png" alt="logo" id='logo'/>
+            <h1>Micheal Nestor</h1>
+          </div>
+          <!-- I set out the links as an ul because I find it the easiest to format in css -->
+          <ul>
+            <li><a href="../" class="not-active">Home</a></li>
+            <li><a href="/" class="active">Projects</a></li>
+            <li><a href="../contact/" class="not-active">Contact</a></li>
+          </ul>
+        </nav>
+      </header> 
+      <!-- projects-intro contains an introduction to the projects gallery and tells the user how to use it-->
+      <section class="projects-intro">
+          <h1>My Projects:</h1>
+          <p>
+              This is a gallery of some of coding projects with short descriptions, all source code is available on my 
+              github which is linked below each project, use the buttons at the bottom to scoll between projects.
+          </p>
+      </section>
+      <!-- 
+        projects-container is a div which contians the entire gallery, and buttons:
+          - every project is stacked on top of each other and only one is visible at a time
+          - I use the app.js file to use the buttons to switch between projects
+          - This system is described in the .js file and the scss file connected to this page
+      -->
+      <section class="projects-container">
+        <!-- picture-explaination-container contains the picture box and explaination box, part of the gallery, it does not contain the buttons at the bottom of the page which switch projects-->
+        <div class="picture-explaination-container">
+          <!--This box contains all of the pictures of the projects which are stacked on top of each other-->
+          <div class="picture-box project-box">
+            <!-- only one image at a time is shown, this image has the class active-project-content a class that is shared with the explaination currently being displayed-->
+            <img src="../img/Activity1.png" alt="image of project 1" class="project-content active-project-content project-A" id='project-A'>
+            <img src="../img/Activity2.png" alt="image of project 2" class="project-content project-B" id='project-B'>
+            <img src="../img/activity3.png" alt="image of project C" class="project-content project-C" id='project-C'>
+          </div>
+          <!-- explaination-box contains all of the explainations of the projects-->
+          <div class="explaination-box project-box">
+            <!-- 
+            Each project-explaination contains:
+              - A project title
+              - A paragraph with a short explaination of the project
+              - A link to the project's source code available on my git-hub 
+            Only the project-explaination with the class active-project-content will be shown
+             -->
+            <div class="project-explaination project-content active-project-content" id='project-A'>
+              <p class='title'>Stock Market Trend Viewer:</p>
+              <p class='paragraph'>
+                This is a python project that takes data from yahoo finance and plots the price history of certain stocks,
+                I built it to practice GUI design with PyQt5, webscraping with BeautifulSoup4, and graphs with matplotlib.
+                I am pleased with the result as the main goal was learning how to link PyQt5 and Matplotlib, which was a success!
+              </p>
+              <div class="link-button">
+                <a href="https://github.com/MichealNestor01/StockTrendViewer" target="blank" class="source-code-link">Source Code</a>
+              </div>
+            </div>
+            <div class="project-explaination project-content" id='project-B'>
+              <p class='title'>Graphical Calculator:</p>
+              <p class='paragraph'>
+                I created this calculator to learn and practice the python PyQt5 module. It is a module for creating graphical 
+                user interfaces in python, I used the program Qt Designer to create the interface, and then I converted the interface
+                file into a python file, and then coded the functionality of the LCD's and buttons.   
+              </p>
+              <div class="link-button">
+                <a href="https://github.com/MichealNestor01/python-PyQt5-calculator" target="blank" class="source-code-link">Source Code</a>
+              </div>
+            </div>
+            <div class="project-explaination project-content" id='project-C'>
+              <p class='title'>www.michealnestor.com:</p>
+              <p class='paragraph'>    
+                This website was my first non-python project, it has allowed me to learn HTML, CSS/SAS and small amounts of JavaScript.
+                It was unusual project for me because there was a much larger emphasis on design as the code was relatively simple. I am 
+                most proud of this project gallery and the script behind it, as well as the responsive nature of the website, delivering a 
+                good user experience across all screen sizes.
+              </p>
+              <div class="link-button">
+                <a href="" class="source-code-link">Source Code</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- project-buttons allow the user to switch between projects, either next project or previous, all functionailty is provided by the app.js file-->
+        <div class="project-buttons">
+          <div class="previous-button button">
+            <p>←</p>
+          </div>
+          <!-- The page number is updated by the app.js file and displays what project you are looking at-->
+          <p id='page-number'></p>
+          <div class="next-button button">
+            <p>→</p>
+          </div>
+        </div>
+      </section>
+    </section>
+    <!-- The same simple footer is used for all of the pages -->
+    <footer>
+      <h4>Micheal Nestor &copy; 2019</h4>
+    </footer>
+    <!-- This splash is behind all of the content, and is an image animated in css that adds some flare to the page-->
+    <img src="../img/splash.png" alt="" class='projects-splash'>
+    <script src="./app.js"></script>
+  </body>
+</html>

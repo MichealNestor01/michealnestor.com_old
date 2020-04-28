@@ -1,0 +1,106 @@
+/*This is the styling for the landing page of my website*/
+/*Intro refers to fact that the content of this page is an introduction to my website and I*/
+
+.intro {
+  min-height: 85vh;
+  width: 90%;
+  margin: auto;
+  @include flex(space-between, center, row);
+  flex-wrap: wrap;
+  h2 {
+    font-size: 8rem;
+    padding-top: 2rem;
+    color: $primary;
+    display: inline-block;
+  }
+  h3 {
+    color: $gray-text;
+    font-size: 6rem;
+    padding: 2rem 0rem;
+  }
+  p {
+    padding-top: 2rem;
+    color: $gray-text;
+  }
+}
+
+.splash {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  height: 100%;
+  z-index: -1;
+}
+
+.intro-text,
+.intro-images {
+  flex: 1 1 40rem;
+}
+
+/*Gradient fill is only supported on some browsers so I had to add @supports */
+@supports (background-clip: text) {
+  .intro h2 {
+    background: $gradient;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+/*These are animations for the svg on the landing page, this was mt first time using an svg and it was perfect for this application*/
+#plant-left {
+  animation: plant 1.25s ease-in-out infinite alternate;
+}
+#plant-right {
+  animation: plant 1.25s ease-in-out infinite alternate 0.625s;
+}
+@supports (transform-origin: bottom) {
+  #clock-arrow {
+    animation: clock 2s linear infinite;
+    transform-box: fill-box;
+    transform-origin: bottom;
+  }
+}
+
+@keyframes plant {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(-20%);
+  }
+}
+
+@keyframes clock {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+/*Intro social is links to social media and the contact page*/
+.intro-social {
+  @include flex(flex-start, center, row);
+  flex-wrap: wrap;
+  margin-top: 4rem;
+  a {
+    margin-left: 4rem;
+  }
+  .link {
+    color: $gray-text;
+    padding: 1rem 3rem;
+    background: white;
+    border: 3px solid $gray-text;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+  }
+  .git-hub {
+    @include flex(center, center, row);
+  }
+}
+
+.intro-social .link:hover {
+  background: $gray-text;
+  color: white;
+}

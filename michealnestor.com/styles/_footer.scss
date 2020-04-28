@@ -1,0 +1,15 @@
+/*This file contains the styling for the footer of the page, this is shared over all of the on the website*/
+footer {
+  user-select: none;
+  position: sticky;
+  flex-shrink: 0;
+  color: $gray-text;
+  min-height: 5vh;
+  padding: 0% 5%;
+  background: $gradient;
+  @include flex(center, flex-start, column);
+}
+/*content-container is located here because the purpose of this div is to keep the footer stuck at the bottom of the page*/
+.content-container{
+  flex: 1 0 auto;
+}

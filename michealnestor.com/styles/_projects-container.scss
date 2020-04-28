@@ -1,0 +1,239 @@
+/*This file is the styling for my project gallery on the projcet page*/
+/*Each picture and explaination are given position absolute and placed on top of each other, however only one pair is visible at once*/
+.projects-container {
+    width: 90%;
+    margin: auto;
+    margin-top: 0rem;
+    min-height: 50vh;
+    @include flex(center, center, column);
+    .picture-explaination-container {
+        width:100%;
+        @include flex(center, center, row);
+        .project-box {
+            border: solid 0.2rem $gray-text;
+            background-color: rgba(255, 255, 255, 0.4);
+            height: 40vh;
+            margin: 5rem;
+            box-shadow: 0px 10px 10px rgba($color: #000000, $alpha: 0.2),
+            0px 20px 40px rgba($color: #000000, $alpha: 0.2);
+            border-radius: 2rem;
+            .project-content {
+                transition: all 1s ease-in-out;
+                position: absolute;
+                visibility: hidden;
+                opacity: 0;
+            }
+            .active-project-content {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+        .picture-box {
+            padding: 2rem;
+            flex-grow: 1;
+            @include flex(center, center, column);
+            .project-A {
+                width: 50rem;
+            }
+            .project-B {
+                width: 36em;
+            }
+            .project-C {
+                width: 50rem;
+            }
+        }
+        .explaination-box {
+            padding: 2rem;
+            flex-grow: 2;
+            @include flex(center, center, column);
+            .project-explaination {
+                height: 35rem;
+                width: 95rem;
+                @include flex(flex-start, flex-start, column);
+                .title {
+                    flex-grow: 1;
+                    font-size: 3.5rem;
+                    text-decoration: underline;
+                }
+                .paragraph {
+                    text-align: justify;
+                    flex-grow: 1;
+                    margin-top: 2rem;
+                    font-size: 2.5rem;
+                }
+                .link-button {
+                    margin-top: 2rem;
+                    width: 100%;
+                    @include flex(center, center, row);
+                    a {
+                        color: black;
+                        text-align: center;
+                        padding: 1rem 3rem;
+                        transition: all 0.5s ease-in-out;
+                        border: solid 0.2rem $gray-text;
+                        font-size: 2.5rem;
+                        &:hover {
+                            background-color: rgba(44, 44, 44, 1);
+                            color: white;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    /*The buttons are at the bottom of the page and allow users to switch between projects*/
+    .project-buttons {
+        @include flex(space-around, center, row);
+        width: 100%;
+        margin-bottom: 1rem;
+        .button { 
+            transition: all 0.5s ease-in-out;
+            border: solid 0.2rem $gray-text;
+            color: $gray-text;
+            @include flex(center, center, column);
+            width: 10rem;
+            height: 10rem;
+            &:hover {
+                background-color: rgba(44, 44, 44, 1);
+                color: white;
+                cursor: pointer;
+            }       
+            p {
+                transform: translateY(-8%);
+                font-size: 6rem;
+                user-select: none;
+            } 
+        }
+    }
+}
+/*
+Due to the fact that the pictures and explainations are positioned absolute they don't scale naturally within their flex-boxes:
+and so every few hundred pixels I had to change the size of the explaination box and the picture so that users would have a good experience no matter what screen size their device had.
+*/
+@media screen and (max-width: 1872px) {
+    .projects-container {
+        .picture-explaination-container {
+            .picture-box {
+                .project-A {
+                    width: 46rem;
+                }
+                .project-B {
+                    width: 36em;
+                }
+                .project-C {
+                    width: 46rem;
+                }
+            }
+            .explaination-box {
+                .project-explaination {
+                    width: 90rem;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 1760px) {
+    .projects-container {
+        .picture-explaination-container {
+            .picture-box {
+                .project-A {
+                    width: 44rem;
+                }
+                .project-B {
+                    width: 36em;
+                }
+                .project-C {
+                    width: 44rem;
+                }
+            }
+            .explaination-box {
+                .project-explaination {
+                    width: 85rem;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 1672px) {
+    .projects-container {
+        .picture-explaination-container {
+            .picture-box {
+                .project-A {
+                    width: 42rem;
+                }
+                .project-B {
+                    width: 36em;
+                }
+                .project-C {
+                    width: 42rem;
+                }
+            }
+            .explaination-box {
+                .project-explaination {
+                    width: 80rem;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 1300px) {
+    .projects-container {
+        .picture-explaination-container {
+            .picture-box {
+                flex-grow: 0;
+                display: none;
+            }
+            .explaination-box {
+                .project-explaination {
+                    width: 120rem;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 1173px) {
+    .projects-container {
+        .picture-explaination-container {
+            .explaination-box {
+                .project-explaination {
+                    width: 100rem;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 1022px) {
+    .projects-container {
+        .picture-explaination-container {
+            .explaination-box {
+                .project-explaination {
+                    width: 90rem;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 914px) {
+    .projects-container {
+        .picture-explaination-container {
+            .explaination-box {
+                .project-explaination {
+                    width: 70rem;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 444px) {
+    .projects-container {
+        width: 100%;
+        .picture-explaination-container {
+            .explaination-box {
+                .project-explaination {
+                    width: 80%;
+                }
+            }
+        }
+    }
+}

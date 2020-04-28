@@ -1,0 +1,42 @@
+/*This file contains the styling for the header of the page, this is shared over all of the on the website*/
+.main-head {
+  width: 95%;
+  margin: 0 0 0 auto;
+}
+
+nav {
+  @include flex(space-between, center, row);
+  min-height: 10vh;
+  width: 60%;
+  flex-wrap: wrap;
+  .logo {
+    @include flex(flex-start, center, row);
+    flex: 1 1 10rem;
+    h1 {
+      margin: 2rem;
+    }
+  }
+  ul {
+    @include flex(space-around, center, row);
+    flex: 1 1 40rem;
+  }
+  /*The active and not-active classes refer to the page a user is currently viewing, 
+  For example if you are on the projects page, the projects button in the nav par will have a solid black oval around it*/
+  .not-active {
+    padding: 0.6rem 2rem;
+    border-radius: 2rem;
+    border: solid 0.3rem transparent;
+    transition: all 0.5s ease-in-out;
+  }
+  .not-active:hover {
+    border: solid 0.3rem $gray-text;
+  }
+  .active {
+    border: solid 0.3rem $gray-text;
+    background: $gray-text;
+    color: white;
+    padding: 0.6rem 2rem;
+    border-radius: 2rem;
+  }
+}
+

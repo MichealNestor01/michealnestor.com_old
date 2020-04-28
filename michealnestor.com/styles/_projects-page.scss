@@ -1,0 +1,40 @@
+/*This file contains most of the styling for the projects page, it does not contain the rotating project gallery however because that has its own file*/
+.projects-intro {
+  min-height: 10vh;
+  width: 90%;
+  margin: auto;
+  h1 {
+    font-size: 4rem;
+    margin-top: 5rem;
+    color: $primary;
+  }
+  p {
+    font-size: 2.5rem;
+    margin: 2rem 0rem;
+  }
+}
+
+/*projects-splash is a large rotating image behind the image which I added to give the page some colour*/
+.projects-splash {
+  width: 200%;
+  height: 300%;
+  z-index: -3;
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  animation: splash 15s linear infinite;
+}
+
+@keyframes splash {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+/*The body cant have overflow or else the large rotating splash image would mess with the page, users would be able to scroll outside of the pages boundaries*/
+body {
+  overflow: hidden;
+}

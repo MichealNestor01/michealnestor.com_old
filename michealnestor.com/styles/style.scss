@@ -1,0 +1,106 @@
+/*variables*/
+$header1: 2.5rem;
+$header2: 4rem;
+$header3: 2.5rem;
+$header4: 2rem;
+$text: 3rem;
+$primary: #d338a8;
+$secondary: #f66537;
+$tertiary: #3d1632;
+$gradient: linear-gradient(left, #d338a8, #f66537);
+$background-color: #154353;
+$gray-text: #2c2c2c;
+/*Mixins*/
+@mixin flex($justify, $align, $direction) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+/*style files*/
+@import "global";
+@import "landing";
+@import "projects-page";
+@import "contact";
+@import "footer";
+@import 'header';
+@import 'projects-container';
+
+/*
+These are for comaptability between screen sizes: 
+The '@media screen and (max-width: )' functions allow me to adjust the sizing of objects on the screen and their properties to make the website responisive
+The functions here affect objects across the whole website, functions that affect individual pages or objects are on their own scss files
+*/
+@media screen and (max-width: 1596px) {
+  html {
+    font-size: 50%;
+  }
+  svg {
+    width: 80%;
+  }
+  nav {
+    width: 100%;
+  }
+}
+
+/*This function disables the splash on the landing page and projects page at 1120px*/
+@media screen and (max-width: 1120px) {
+  .splash {
+    display: none;
+  }
+  .projects-splash {
+    display: none;
+  }
+  body {
+    overflow-y: scroll;
+  }
+}
+
+/*Since 768px was a common break point for the pages I included the adjustments in this main styles file*/
+@media screen and (max-width: 768px) {
+  form {
+    height: 130rem;
+    padding: 0;
+    width: 100%;
+  }
+  html {
+    font-size: 40%;
+  }
+  svg {
+    height: 60%;
+  }
+  .main-head {
+    width: 100%;
+  }
+  nav {
+    .logo {
+      @include flex(center, center, column);
+      flex: 1 1 30rem;
+      margin-top: 2rem;
+    }
+    ul {
+      flex: 1 1 60rem;
+      margin: 2rem 0rem;
+    }
+  }
+  .intro-text {
+    margin-top: 5rem;
+    text-align: center;
+  }
+  .intro-images {
+    text-align: center;
+  }
+  .intro-social {
+    @include flex(center, center, row);
+    a {
+      margin: 2rem;
+    }
+  }
+}
+
+/*As it affects the whole site the function is here in the main styles file*/
+@media screen and (max-width: 581px) {
+  html {
+    font-size: 30%;
+  }
+}
